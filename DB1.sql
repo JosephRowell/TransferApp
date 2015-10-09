@@ -50,7 +50,8 @@ CREATE TABLE Students (
 INSERT INTO Students(pid, major, startDate)
     VALUES(3, 'Computer Science', '08312015');
 
-	
+
+--WRITE OUT SUBJECTS	
 --DCC Courses
 CREATE TABLE DCC_Courses (
     crsid varchar(100) NOT NULL unique, --Art 101
@@ -62,10 +63,11 @@ CREATE TABLE DCC_Courses (
 
 --first 2 transferable Acc courses
 INSERT INTO DCC_Courses(crsid, ccid, name,subject)
-    VALUES('Acc 1', 2, 'Accounting Elect', 'Acc');
+    VALUES('Acc 1', 2, 'Accounting Elect', 'Accounting');
 INSERT INTO DCC_Courses(crsid, ccid, name,subject)
-    VALUES('Acc 101', 2, 'PRINC ACCOUNTING I', 'Acc');
-	
+    VALUES('Acc 101', 2, 'PRINC ACCOUNTING I', 'Accounting');
+
+--WRITE OUT SUBJECTS	
 --Marist Courses
 CREATE TABLE MaristCourses (
     marid varchar(100) NOT NULL unique,
@@ -78,9 +80,9 @@ CREATE TABLE MaristCourses (
 );
 --first 2 eqv to DCC Acc courses
 INSERT INTO MaristCourses(marid, mcid, name,credit, subject)
-    VALUES('Acct 800N', 1, 'Accounting Elective', 3, 'Acct');
+    VALUES('Acct 800N', 1, 'Accounting Elective', 3, 'Accounting');
 INSERT INTO MaristCourses(marid, mcid, name,credit, subject)
-    VALUES('Acct 801N', 1, 'Accounting Elective', 3, 'Acct');
+    VALUES('Acct 801N', 1, 'Accounting Elective', 3, 'Accounting');
 --non-transfer connection	
 INSERT INTO MaristCourses(marid, mcid, name,subject)
     VALUES('Reg 800L', 1, 'NON-TRANSFERABLE COURSE', 'Reg');
