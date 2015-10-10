@@ -108,11 +108,119 @@ CREATE TABLE Majors (
     name varchar(250) NOT NULL unique,
 	PRIMARY KEY (majid)
 );
+
+--55 Majors -should be all of them
 INSERT INTO Majors(name)
     VALUES('Accounting');
 INSERT INTO Majors(name)
-    VALUES('Computer Science Software Development');
-
+    VALUES('American Studies');
+INSERT INTO Majors(name)
+    VALUES('Applied Mathematics');
+INSERT INTO Majors(name)
+    VALUES('Fine Arts: Studio Arts');
+INSERT INTO Majors(name)
+    VALUES('Fine Arts: Art History');
+INSERT INTO Majors(name)
+    VALUES('Digital Media');
+INSERT INTO Majors(name)
+    VALUES('Studio Art');
+INSERT INTO Majors(name)
+    VALUES('Athletic Training');
+INSERT INTO Majors(name)
+    VALUES('Biology');
+INSERT INTO Majors(name)
+    VALUES('Biology Education');
+INSERT INTO Majors(name)
+    VALUES('Biomedical Sciences');
+INSERT INTO Majors(name)
+    VALUES('Business Administration');
+INSERT INTO Majors(name)
+    VALUES('Chemistry (B.S.)');
+INSERT INTO Majors(name)
+    VALUES('Chemistry – Biochemistry Option (B.S.)');
+INSERT INTO Majors(name)
+    VALUES('Chemistry (B.A.)');
+INSERT INTO Majors(name)
+    VALUES('Biochemistry (B.A.)');
+INSERT INTO Majors(name)
+    VALUES('Communication, Advertising Concentration');
+INSERT INTO Majors(name)
+    VALUES('Communication, Communication Studies Concentration');
+INSERT INTO Majors(name)
+    VALUES('Communication, Journalism Concentration');
+INSERT INTO Majors(name)
+    VALUES('Communication, Public Relations Concentration');
+INSERT INTO Majors(name)
+    VALUES('Communication, Sports Communication Concentration');
+INSERT INTO Majors(name)
+    VALUES('Computer Science with a Concentration in Software Development');
+INSERT INTO Majors(name)
+    VALUES('Computer Science with a Concentration in Game Design and Programming');
+INSERT INTO Majors(name)
+    VALUES('Criminal Justice');	
+INSERT INTO Majors(name)
+    VALUES('Economics');
+INSERT INTO Majors(name)
+    VALUES('Psychology and Dual Certification');
+INSERT INTO Majors(name)
+    VALUES('English Concentration in Literature');
+INSERT INTO Majors(name)
+    VALUES('English Concentration in Writing');
+INSERT INTO Majors(name)
+    VALUES('English Concentration in Theatre');
+INSERT INTO Majors(name)
+    VALUES('Environmental Science & Policy, Science Concentration');
+INSERT INTO Majors(name)
+    VALUES('Environmental Science & Policy, Policy Concentration ');
+INSERT INTO Majors(name)
+    VALUES('Fashion Design');
+INSERT INTO Majors(name)
+    VALUES('Fashion Merchandising with a Business Concentration');
+INSERT INTO Majors(name)
+    VALUES('Fashion Merchandising with Product Development Concentration');
+INSERT INTO Majors(name)
+    VALUES('Fashion Merchandising with a Fashion Promotion Concentration');
+INSERT INTO Majors(name)
+    VALUES('French');
+INSERT INTO Majors(name)
+    VALUES('History');
+INSERT INTO Majors(name)
+    VALUES('History / Secondary Education');
+INSERT INTO Majors(name)
+    VALUES('Information Technology and Systems with a Concentration in Information Technology');
+INSERT INTO Majors(name)
+    VALUES('Information Technology and Systems with a Concentration in Information Systems');
+INSERT INTO Majors(name)
+    VALUES('Italian');
+INSERT INTO Majors(name)
+    VALUES('Liberal Studies');
+INSERT INTO Majors(name)
+    VALUES('Mathematics');
+INSERT INTO Majors(name)
+    VALUES('Mathematics with Adolescence Education Certification');
+INSERT INTO Majors(name)
+    VALUES('Media Studies and Production: Interactive Media & Game Design Concentration');
+INSERT INTO Majors(name)
+    VALUES('Media Studies and Production: Film & Television Concentration');
+INSERT INTO Majors(name)
+    VALUES('Medical Technology');
+INSERT INTO Majors(name)
+    VALUES('Philosophy');
+INSERT INTO Majors(name)
+    VALUES('Philosophy with a Concentration in Religious Studies ');
+INSERT INTO Majors(name)
+    VALUES('Political Science');
+INSERT INTO Majors(name)
+    VALUES('Psychology');
+INSERT INTO Majors(name)
+    VALUES('Religion');
+INSERT INTO Majors(name)
+    VALUES('Social Work');
+INSERT INTO Majors(name)
+    VALUES('Spanish');	
+INSERT INTO Majors(name)
+    VALUES('Bilingual Education Concentration');	
+	
 --connection table between Majors and MaristCourses
 CREATE TABLE MajorsMar (
     marid varchar(100) NOT NULL,
@@ -133,10 +241,119 @@ CREATE TABLE Minors (
     name varchar(250) NOT NULL unique,
 	PRIMARY KEY (minid)
 );
+
+--55 Minors roughly all of them 
 INSERT INTO Minors(name)
     VALUES('Accounting');
 INSERT INTO Minors(name)
-    VALUES('Computer Science Software Development');
+    VALUES('African Diaspora Studies');
+INSERT INTO Minors(name)
+    VALUES('American Studies');
+INSERT INTO Minors(name)
+    VALUES('Studio Art');	
+INSERT INTO Minors(name)
+    VALUES('Art History');	
+INSERT INTO Minors(name)
+    VALUES('Biology');
+INSERT INTO Minors(name)
+    VALUES('Business');
+INSERT INTO Minors(name)
+    VALUES('Catholic Studies');
+INSERT INTO Minors(name)
+    VALUES('Chemistry');
+INSERT INTO Minors(name)
+    VALUES('Cognitive Science');	
+INSERT INTO Minors(name)
+    VALUES('Cinema Studies');	
+INSERT INTO Minors(name)
+    VALUES('Communication');	
+INSERT INTO Minors(name)
+    VALUES('Communication, Advertising');
+INSERT INTO Minors(name)
+    VALUES('Communication, Advertising Communication Studies');
+INSERT INTO Minors(name)
+    VALUES('Communication, Communication Theory Communication General Communication Minor');
+INSERT INTO Minors(name)
+    VALUES('Communication Studies');	
+INSERT INTO Minors(name)
+    VALUES('Computer Science');	
+INSERT INTO Minors(name)
+    VALUES('Criminal Justice');	
+INSERT INTO Minors(name)
+    VALUES('Digital Video Production');
+INSERT INTO Minors(name)
+    VALUES('Economics');
+INSERT INTO Minors(name)
+    VALUES('English - Literature');
+INSERT INTO Minors(name)
+    VALUES('English - Theatre');	
+INSERT INTO Minors(name)
+    VALUES('English - Writing');	
+INSERT INTO Minors(name)
+    VALUES('Creative Writing');
+INSERT INTO Minors(name)
+    VALUES('Environmental Policy');
+INSERT INTO Minors(name)
+    VALUES('Environmental Science');
+INSERT INTO Minors(name)
+    VALUES('Environmental Studies');
+INSERT INTO Minors(name)
+    VALUES('Fashion Merchandising');	
+INSERT INTO Minors(name)
+    VALUES('Product Development');	
+INSERT INTO Minors(name)
+    VALUES('French Languages Studies');
+INSERT INTO Minors(name)
+    VALUES('Global');
+INSERT INTO Minors(name)
+    VALUES('Graphic Design');
+INSERT INTO Minors(name)
+    VALUES('History');
+INSERT INTO Minors(name)
+    VALUES('Hudson River Valley Regional Studies');	
+INSERT INTO Minors(name)
+    VALUES('Information Systems');	
+INSERT INTO Minors(name)
+    VALUES('Information Technology');
+INSERT INTO Minors(name)
+    VALUES('Enterprise Computing');
+INSERT INTO Minors(name)
+    VALUES('Interactive Media');
+INSERT INTO Minors(name)
+    VALUES('Italian');
+INSERT INTO Minors(name)
+    VALUES('Jewish Studies');	
+INSERT INTO Minors(name)
+    VALUES('Journalism');	
+INSERT INTO Minors(name)
+    VALUES('Latin American & Caribbean Studies');
+INSERT INTO Minors(name)
+    VALUES('Mathematics');
+INSERT INTO Minors(name)
+    VALUES('Music');
+INSERT INTO Minors(name)
+    VALUES('Medieval and Renaissance Studies');
+INSERT INTO Minors(name)
+    VALUES('Philosophy');	
+INSERT INTO Minors(name)
+    VALUES('Photography');	
+INSERT INTO Minors(name)
+    VALUES('Political Science');
+INSERT INTO Minors(name)
+    VALUES('Psychology');
+INSERT INTO Minors(name)
+    VALUES('Religious Studies');
+INSERT INTO Minors(name)
+    VALUES('Public Praxis');
+INSERT INTO Minors(name)
+    VALUES('Social Work');	
+INSERT INTO Minors(name)
+    VALUES('Sociology');	
+INSERT INTO Minors(name)
+    VALUES('Spanish Languages Studies');
+INSERT INTO Minors(name)
+    VALUES('Women''s Studies');
+	
 	
 --connection table between Minors and MaristCourses
 CREATE TABLE MinorsMar (
