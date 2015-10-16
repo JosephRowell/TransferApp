@@ -1,7 +1,23 @@
 --Capping Database       Nikol Pettine
 --we are doing best fit major
+--
 --create views for freq queries
+--CREATE VIEW SpeciesMagicSpecs 
+--AS
+--SELECT s.name AS "Species Name", m.name AS "Magic Name", m.school AS "Magic 	School"
+--FROM species s, MagicSpec ms, magic m
+--WHERE ms.sid = s.sid AND ms.mid = m.mid
+--ORDER BY m.school, m.name, s.name
 -----------------------
+
+--put the csv file into a folder and right click on the file hit properties
+-- pick Security tab and hit the add and put 'Everyone' in the enter object name to select text area.
+-- after that runs then you can try running one of the following:
+--COPY DCC_Courses FROM 'C:/Users/Nikol/Documents/Capping/d1.csv' WITH CSV HEADER;
+--COPY MaristCourses FROM 'C:/Users/Nikol/Documents/Capping/m1.csv' WITH CSV HEADER;
+
+
+
 --Colleges
 CREATE TABLE Colleges (
     cid SERIAL, --SERIAL starts at 1
@@ -61,12 +77,6 @@ CREATE TABLE DCC_Courses (
     PRIMARY KEY (crsid,ccid)
 );
 
---first 2 transferable Acc courses
-INSERT INTO DCC_Courses(crsid, ccid, name,subject)
-    VALUES('Acc 1', 2, 'Accounting Elect', 'Accounting');
-INSERT INTO DCC_Courses(crsid, ccid, name,subject)
-    VALUES('Acc 101', 2, 'PRINC ACCOUNTING I', 'Accounting');
-
 --WRITE OUT SUBJECTS	
 --Marist Courses
 CREATE TABLE MaristCourses (
@@ -78,14 +88,9 @@ CREATE TABLE MaristCourses (
 	subject varchar(250),
     PRIMARY KEY (marid,mcid)
 );
---first 2 eqv to DCC Acc courses
-INSERT INTO MaristCourses(marid, mcid, name,credit, subject)
-    VALUES('Acct 800N', 1, 'Accounting Elective', 3, 'Accounting');
-INSERT INTO MaristCourses(marid, mcid, name,credit, subject)
-    VALUES('Acct 801N', 1, 'Accounting Elective', 3, 'Accounting');
 --non-transfer connection	
-INSERT INTO MaristCourses(marid, mcid, name,subject)
-    VALUES('Reg 800L', 1, 'NON-TRANSFERABLE COURSE', 'Reg');
+--INSERT INTO MaristCourses(marid, mcid, name,subject)
+  --  VALUES('Reg 800L', 1, 'NON-TRANSFERABLE COURSE', 'Reg');
 
 --transferable courses
 CREATE TABLE Transferable (
@@ -97,19 +102,20 @@ CREATE TABLE Transferable (
 	FOREIGN KEY (crsid, ccid) REFERENCES DCC_Courses(crsid, ccid),
     PRIMARY KEY (marid,mcid, crsid, ccid)
 );
-INSERT INTO Transferable(marid, mcid, crsid, ccid)
-    VALUES('Acct 800N', 1, 'Acc 1', 2);
-INSERT INTO Transferable(marid, mcid, crsid, ccid)
-    VALUES('Acct 801N', 1, 'Acc 101', 2);
+--INSERT INTO Transferable(marid, mcid, crsid, ccid)
+  --  VALUES('REG 800L', 1, 'ACC 100', 2);
+--INSERT INTO Transferable(marid, mcid, crsid, ccid)
+  --  VALUES('ACCT 801N', 1, 'ACC 101', 2);
 	
 --majors --name includes concentrations
 CREATE TABLE Majors (
     majid SERIAL, --SERIAL starts at 1
     name varchar(250) NOT NULL unique,
+	amtCourses integer, --will fill in eventually...
 	PRIMARY KEY (majid)
 );
 
---55 Majors -should be all of them
+--54 Majors -should be all of them
 INSERT INTO Majors(name)
     VALUES('Accounting');
 INSERT INTO Majors(name)
@@ -217,9 +223,7 @@ INSERT INTO Majors(name)
 INSERT INTO Majors(name)
     VALUES('Social Work');
 INSERT INTO Majors(name)
-    VALUES('Spanish');	
-INSERT INTO Majors(name)
-    VALUES('Bilingual Education Concentration');	
+    VALUES('Spanish');		
 	
 --connection table between Majors and MaristCourses
 CREATE TABLE MajorsMar (
@@ -229,20 +233,19 @@ CREATE TABLE MajorsMar (
 	FOREIGN KEY (marid, mcid) REFERENCES MaristCourses(marid, mcid),
     primary key (marid,mcid, majid)
 );
-INSERT INTO MajorsMar(marid, mcid, majid)
-    VALUES('Acct 800N', 1, 1);
-INSERT INTO MajorsMar(marid, mcid, majid)
-    VALUES('Acct 801N', 1, 1);
+--INSERT INTO MajorsMar(marid, mcid, majid)
+   -- VALUES('Acct 800N', 1, 1);
 		
 		
 --minors
 CREATE TABLE Minors (
     minid SERIAL,
     name varchar(250) NOT NULL unique,
+	amtCourses integer, --will fill in eventually...
 	PRIMARY KEY (minid)
 );
 
---55 Minors roughly all of them 
+--54 Minors roughly all of them 
 INSERT INTO Minors(name)
     VALUES('Accounting');
 INSERT INTO Minors(name)
@@ -326,8 +329,6 @@ INSERT INTO Minors(name)
 INSERT INTO Minors(name)
     VALUES('Journalism');	
 INSERT INTO Minors(name)
-    VALUES('Latin American & Caribbean Studies');
-INSERT INTO Minors(name)
     VALUES('Mathematics');
 INSERT INTO Minors(name)
     VALUES('Music');
@@ -363,10 +364,8 @@ CREATE TABLE MinorsMar (
 	FOREIGN KEY (marid, mcid) REFERENCES MaristCourses(marid, mcid),
     primary key (marid,mcid, minid)
 );		
-INSERT INTO MinorsMar(marid, mcid, minid)
-    VALUES('Acct 800N', 1, 1);
-INSERT INTO MinorsMar(marid, mcid, minid)
-    VALUES('Acct 801N', 1, 1);		
+--INSERT INTO MinorsMar(marid, mcid, minid)
+ --   VALUES('Acct 800N', 1, 1);	
 		
 		
 		
