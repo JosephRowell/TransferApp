@@ -10,7 +10,7 @@
 --ORDER BY m.school, m.name, s.name
 -----------------------
 
---put the csv file into a folder and right click on the file hit properties
+--put the csv file into a folder and right click on the folder hit properties
 -- pick Security tab and hit the add and put 'Everyone' in the enter object name to select text area.
 -- after that runs then you can try running one of the following:
 --COPY DCC_Courses FROM 'C:/Users/Nikol/Documents/Capping/d1.csv' WITH CSV HEADER;
@@ -390,13 +390,12 @@ WHERE c.crsid = t.crsid AND c.ccid = t.ccid
 		AND m.marid = mm.marid AND m.mcid = mm.mcid
 		AND mm.majid = maj.majid
 
---above query on specific course 
-SELECT c.crsid AS "DCC Course", m.marid AS "Marist Course", maj.name AS "Major"
-FROM DCC_Courses c, MaristCourses m, Transferable t, Majors maj, MajorsMar mm 
+--**above query on specific course ** --this is the main query
+SELECT distinct c.crsid AS "DCC Course", c.name AS "DCC Name",  m.marid AS "Marist Course", m.name AS "Marist Name"
+FROM DCC_Courses c, MaristCourses m, Transferable t
 WHERE c.crsid = t.crsid AND c.ccid = t.ccid 
 		AND m.marid = t.marid AND m.mcid = t.mcid
-		AND m.marid = mm.marid AND m.mcid = mm.mcid
-		AND mm.majid = maj.majid AND c.crsid = 'Acc 1'
+ORDER BY c.name
 		
 --works same as Majors one	
 SELECT c.crsid AS "DCC Course", m.marid AS "Marist Course", mi.name AS "Minor"
