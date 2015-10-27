@@ -15,7 +15,7 @@
 -- after that runs then you can try running one of the following:
 --COPY DCC_Courses FROM 'C:/Users/Nikol/Documents/Capping/d1.csv' WITH CSV HEADER;
 --COPY MaristCourses FROM 'C:/Users/Nikol/Documents/Capping/m1.csv' WITH CSV HEADER;
-
+--COPY transferable FROM 'C:/Users/Nikol/Documents/Capping/trans.csv' WITH CSV HEADER;
 
 
 --Colleges
@@ -390,12 +390,19 @@ WHERE c.crsid = t.crsid AND c.ccid = t.ccid
 		AND m.marid = mm.marid AND m.mcid = mm.mcid
 		AND mm.majid = maj.majid
 
---**above query on specific course ** --this is the main query
+--**query for getting all equivalency ** --this is the main query
 SELECT distinct c.crsid AS "DCC Course", c.name AS "DCC Name",  m.marid AS "Marist Course", m.name AS "Marist Name"
 FROM DCC_Courses c, MaristCourses m, Transferable t
 WHERE c.crsid = t.crsid AND c.ccid = t.ccid 
 		AND m.marid = t.marid AND m.mcid = t.mcid
-ORDER BY c.name
+ORDER BY c.name, m.name
+
+--select  transferable courses without non-transfers
+SELECT distinct c.crsid AS "DCC Course", c.name AS "DCC Name",  m.marid AS "Marist Course", m.name AS "Marist Name"
+FROM DCC_Courses c, MaristCourses m, Transferable t
+WHERE c.crsid = t.crsid AND c.ccid = t.ccid 
+		AND m.marid = t.marid AND m.mcid = t.mcid AND m.marid != 'REG 800L' 
+ORDER BY c.name, m.name
 		
 --works same as Majors one	
 SELECT c.crsid AS "DCC Course", m.marid AS "Marist Course", mi.name AS "Minor"
