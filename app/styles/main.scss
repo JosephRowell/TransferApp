@@ -79,6 +79,7 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
+	float: bottom;
   }
   /* Space out the masthead */
   .header {
@@ -88,4 +89,19 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+  
+  .shadydiv {
+	background-color: grey;
 }
+
+   .footer, .push{
+		height: 4em;
+		clear: both;
+	
+   }
+
+	
+  
+}
+
+
