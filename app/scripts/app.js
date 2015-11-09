@@ -39,6 +39,21 @@ angular
         controller: 'enterCoursesCtrl',
         controllerAs: 'entercourses'
       })
+	  .when('/studentview', {
+        templateUrl: 'views/studentview.html',
+        controller: 'studentViewCtrl',
+        controllerAs: 'studentview'
+      })
+	  .when('/newstudent', {
+        templateUrl: 'views/newstudent.html',
+        controller: 'newStudentCtrl',
+        controllerAs: 'newstudent'
+      })
+	  .when('/registerconfirm', {
+        templateUrl: 'views/registerconfirm.html',
+        controller: 'registerConfirmCtrl',
+        controllerAs: 'registerconfirm'
+      })
       .otherwise({
         redirectTo: '/'
       });

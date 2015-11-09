@@ -1,28 +1,25 @@
-<div class="jumbotron">
-  <h1>Select an Option</h1>
-  <p class="lead">
-    
-    
-  </p>
-  <p>
-	<a class="btn btn-lg btn-success" ng-href="#/viewcourses">View Courses</a> <!--change to view c -->
-	<a class="btn btn-lg btn-success" ng-href="#/entercourses">Enter Courses</a>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles\login_style.css">
+	</head>
+
+	<body>
+		<div class="img-container">
+			<img src = "images\longlogo.jpg" alt = "Marist Logo">
+		</div>
+		
+		<h1 align="center">Welcome to the Marist Transfer Application</h1>
 	
-  </p>
-  
-  <p>
-		Todo: 
-		1. Get Dropdowns done
-		2. login screen
-		3. Admin view
-		4. Hook up backend
-		5. Node API thing
-		6. 
-  
-  </p>
-
-</div>
-
-<div class="row marketing">
- 
-</div>
+		<div class="loginmodal-container">
+			<form>
+				<input type="text" name="user" placeholder="Email" required>
+				<input type="password" name="pass" placeholder="Password" required>
+				<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+			</form>
+			<div class="login-help">
+				<a href="#/newstudent">New Users</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="">Admin (demo only)</a>
+			</div>
+		</div>
+	</body>
+</html>
