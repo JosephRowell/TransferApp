@@ -8,13 +8,45 @@
 			<img src = "images\longlogo.jpg" alt = "Marist Logo">
 		</div>
 
-		<h1>Catalog:</h1>
+		<h1>Course catalog:</h1>
+		
+		<script>
+			var pg = require('pg');
+			var conString = "postgres://postgres:postgres@localhost/DB1";
+			var query = client.query('SELECT name FROM maristcourses');
+			query.on('row', function(row) {
+				console.log('user "%s" is the example', row.name);
+			});
+			//pg.connect(conString, function(err, client, done) {
+				//if(err) {
+					//return console.error('error fetching client from pool', err);
+				//}
+				//client.query('SELECT * FROM maristcourses', function(err, result) {
+					//done();
+					
+					//if(err) {
+						//return console.error('error running query', err);
+					//}
+					//console.log(result.rows[0].number);
+				//});
+			//});
+			
+		</script>
+		 
+		
 
 		<div class="shadydiv"> <!-- perhaps use some sort of ng-grid like magic here? -->
 <pre>
-ART 101 CourseID: 1234 Section: 1 Preq: None
-BUS 101 CourseID: 2222 Section: 2 Preq: None
-Need to view courses in backend.
+CMPT 103L - TECNOLOGY FOR 21st CENTURUY	   3	COMPUTING TECH
+CMPT 120L - INTRO TO PROGRAMMING	   3	COMPUTING TECH
+CMPT 220L - SOFTWARE DEVELOPMENT I	   3	COMPUTING TECH
+CMPT 430L - TECHNOLOGY+ENTREPRENEURSHIP	   3	COMPUTING TECH
+CMSC 110L - COMPUTING STUD SEM             3	COMP SCI
+CMSC 120L - COMPUTER SCI I                 3	COMP SCI
+CMSC 121L - COMPUTER SCI II                3	COMP SCI
+CMSC 310L - OBJ-ORNT PRG C++               3	COMP SCI
+CMSC 412L - ROBOTICS                       3	COMP SCI
+CMSC 801L - COMP SCI ELECTIVE              3	COMP SCI
 </pre>
 		</div>
 		
@@ -23,5 +55,6 @@ Need to view courses in backend.
 				width: 100%;
 			}
 		</style>
+		
 	</body>
 </html>

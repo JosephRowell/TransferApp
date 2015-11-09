@@ -6,7 +6,7 @@
 }
 
 h1 {
-	
+
 }
 
 #dropdowns {
@@ -17,15 +17,16 @@ h1 {
 	margin-left: 80%;
 }
 
-.btn {
+/*.btn {
 	background: transparent;
 	text-align: center;
 	vertical-align: middle;
 	font-family: roboto;
 	padding-bottom: 17px;
 	position: absolute;
-	bottom: 40%;
-}
+	bottom: 445px;
+	margin-left:260px;
+}*/
 
 .btn-primary{
 	background: #d2232a;
