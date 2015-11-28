@@ -31,25 +31,5 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "description": "This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular) version 0.12.1.",
-  "version": "1.0.0",
-  "main": "Gruntfile.js",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JosephRowell/TransferApp.git"
-  },
-  "author": "Team3",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JosephRowell/TransferApp/issues"
-  },
-  "homepage": "https://github.com/JosephRowell/TransferApp#readme"
+  }
 }
