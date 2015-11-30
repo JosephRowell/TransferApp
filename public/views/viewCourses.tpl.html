@@ -1,0 +1,32 @@
+<section id = "viewCoursesTransferApp">
+
+    <div class="container" ng-controller="viewCoursesCtrl">
+
+        <!-- Page header -->
+        <div class="jumbotron text-center">
+            <h1>Course Catalog <span class="label label-info">{{todos.length}}</span></h1>
+            <p>Look at what Marist has to offer.</p>
+        </div>
+
+        <!-- List of Course offerings-->
+        <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm">
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th width="200">Courses:</th>
+                        </tr>
+                        </thead>
+                        <tbody> <!--? todoo in rows -->
+                        <tr ng-repeat="todo in todos" value="{{todo.id}}">
+                            <td>{{todo.text}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+
+    </div> <!-- @END/ .container -->
+
+</section> <!-- @END/ section -->

@@ -1,0 +1,33 @@
+<section id = "enterCoursesTransferApp">
+
+    <div class="container" ng-controller="enterCoursesCtrl">
+
+        <!-- Page header -->
+        <div class="jumbotron text-center">
+            <h1>Enter courses <span class="label label-info">{{todos.length}}</span></h1>
+            <p>Choose courses that you want to take, and see what will transfer.</p>
+        </div>
+
+
+        <table>
+            <thead>
+            <tr>
+                <th width="200">Course Name</th>
+            </tr>
+            </thead>
+            <tbody> <!--Not sure how to go about this -->
+            <tr ng-repeat="row in rows">
+                <td>
+                    <select id="courseSelect" style="width: 80%;">
+                        <option ng-repeat="todo in todos" value="{{todo.id}}">{{todo.text}}</option>
+                    </select>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="#" class="button" ng-click="addRow()">Add Row</a>
+
+    </div> <!-- @END/ .container -->
+
+</section> <!-- @END/ section -->

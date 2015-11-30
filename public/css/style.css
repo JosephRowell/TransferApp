@@ -1,0 +1,68 @@
+
+html { 
+	overflow-y:scroll; 
+}
+
+body {
+	padding-top:50px; 
+}
+
+#todo-list { 
+	margin-bottom:30px; 
+}
+
+#todo-form { 
+	margin-bottom:50px; 
+}
+
+input {
+	border: none;
+}
+
+
+/*CSS FOR THE MARIST BANNER IMAGE ETC. */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.img-container img {
+	width: 100%;
+	/*position: fixed;*/
+}
+
+/* logo and title container*/
+.header-container {
+	padding: 30px;
+	max-width: 550px;
+	width: 100% !important;
+	background-color: #F7F7F7;
+	margin: 0 auto;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	font-family: roboto;
+}
+/* title */
+.header-container h1 {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1.9em;
+	font-family: roboto;
+}
+
+.header-container h3{
+	font-size: 1.5em;
+	font-family: roboto;
+}
+
+.body-container {
+	padding: 30px;
+	max-width: 550px;
+	max-height: 300px;
+	overflow: scroll;
+	width: 100% !important;
+	background-color: #F7F7F7;
+	margin: 0 auto;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	font-family: roboto;
+}
