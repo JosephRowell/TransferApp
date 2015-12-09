@@ -1,0 +1,51 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.img-container img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	width: 1050px;
+	
+}
+
+h1 {
+
+}
+.dropdown {
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+}
+
+.dropdown-menu {
+	height: auto;
+	max-height: 300px;
+	overflow-x: hidden;
+}
+
+.submitbutton {
+	margin-left: 60%;
+}
+
+
+.btn-primary{
+	background: #d2232a !important;
+	text-align: center;
+	font-size: 18px;
+	height: 40px;
+	vertical-align: middle;
+	font-family: roboto;
+}
+
+.btn-primary:hover {
+  /* border: 1px solid #2f5bb7; */
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #ba1f26;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.btn-primary:active:focus{
+	background-color: #7e1418;
+}
