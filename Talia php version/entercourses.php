@@ -44,7 +44,7 @@
 		</div>
 		
 		<div class="dropdown">
-			<h1>Enter Courses</h1>	
+			<h1>Enter Courses</h1>
 			<?php
 				//require_once('config.php');
 				//attempt a connection
@@ -53,57 +53,26 @@
 				//execute query
 				$sql = "SELECT * FROM DCC_Courses";
 				$result = pg_query($dbh, $sql);
-				//if(!$result){
-					//die("Error in SQL query: " . pg_last_error());
-				//}
+				if(!$result){
+					die("Error in SQL query: " . pg_last_error());
+				}
 			?>				
-			<select>
+			
+			<form method="post" action="submitpage.php">
+			<select multiple ="multiple" name="formCourses[ ]" size=20 id="mySelect">
 				<?php
 					while ($row = pg_fetch_array($result)) {
-						echo "<option value='ccid'>" . nl2br(stripslashes($row['crsid'])) . " - " . nl2br(stripslashes($row['name'])) . "</option>";
+						global $temp;
+						$temp = ($row['crsid']);
+						echo "<option value='$temp'>" . nl2br(stripslashes($row['crsid'])) . " - " . nl2br(stripslashes($row['name'])) . "</option>";
 					}	
 				?>
 			</select>
-			<br>
-			<select>
-				<?php
-					while ($row = pg_fetch_array($result)) {
-						echo "<option value='ccid'>" . nl2br(stripslashes($row['crsid'])) . " - " . nl2br(stripslashes($row['name'])) . "</option>";
-					}
-					
-				?>
-			</select>
-		</div>
-			
-
-			<!--<div class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose course
-					<span class="caret">
-					</span>
-				</button>
-				<ul class="dropdown-menu">
-					<li>
-						<?php
-							while ($row = pg_fetch_array($result)) {
-								$name = $row['name'];
-								
-								$name = htmlspecialchars($row['name']);
-								
-								echo $name . "<br />";
-								//echo $row[0] . "<br />";
-							}
-						?>
-					</li>
-				</ul>
-			</div>-->
-	
-		<!--<div class="addmore"> 
-			<button type="button" class="btn" onclick="duplicate()">+ Add more courses</button>
-		</div>-->
-	
-		<div class="submitbutton">
+			<!--<input type="submit" name+"submit" value="submit"/>-->
 			<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 		</div>
+
 		<br>
 		<!-- footer -->
 		<!--Pushes down the footer -->
@@ -114,10 +83,6 @@
 				<p><hr><a href="about.html"> FAQ </a></p>
 			</div>
 		</div>
-
-<!--<a href ng-click="showhidedetails = !showhidedetails" style="font-size:160%">filter</a>
-	<div id="showhidedetails" ng-hide="showhidedetails">
-		<div class="showcolleges"> hello</div>-->
 
 	</body>
 </html>

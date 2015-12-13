@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	
+	<body>
+		<!-- header - navigation bar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="studentview.html">Marist Transfer App</a>
+					</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="studentview.html">Home</a></li>
+						<li><a href="viewcourses.html">View Courses</a></li>
+						<li><a href="entercourses.html">Enter Courses</a></li>
+						<li><a href="index.html">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="img-container">
+			<img src = "longlogo.jpg" alt = "Marist Logo">
+		</div>
+
+		<h1>Course catalog:</h1>
+		
+		<script>
+			var pg = require('pg');
+			var conString = "postgres://postgres:postgres@localhost/DB1";
+			var query = client.query('SELECT name FROM maristcourses');
+			query.on('row', function(row) {
+				console.log('user "%s" is the example', row.name);
+			});
+			//pg.connect(conString, function(err, client, done) {
+				//if(err) {
+					//return console.error('error fetching client from pool', err);
+				//}
+				//client.query('SELECT * FROM maristcourses', function(err, result) {
+					//done();
+					
+					//if(err) {
+						//return console.error('error running query', err);
+					//}
+					//console.log(result.rows[0].number);
+				//});
+			//});
+			
+		</script>
+		 
+		
+
+		<div class="shadydiv"> <!-- perhaps use some sort of ng-grid like magic here? -->
+<pre>
+<?php
+				//attempt a connection
+				$dbh = pg_connect("host=localhost dbname=capping user=postgres password=password")
+				or die("Can't connect to database".pg_last_error());
+				//query
+				$sql = "SELECT name FROM maristcourses";
+				$result = pg_query($dbh, $sql);
+					if(!$result){
+						die("Error in SQL query: " . pg_last_error());
+					}
+				//iterate over result set
+				//print each row
+				while ($row = pg_fetch_array($result)) {
+					echo $row[0] . "<br />";
+					//echo "mcid: " . $row[1] . "<br />";
+					//echo "name: " . $row[2] . "<br />";
+					//echo "credit: " . $row[3] . "<br />";
+					//echo "subject: " . $row[4] . "<p />";
+				}
+				//free memory
+				pg_free_result($result);
+				//close connection
+				pg_close($dbh);
+			?>
+</pre>
+		</div>
+		
+		<style>
+			.img-container img {
+				width: 100%;
+			}
+		</style>
+		
+		<!-- footer -->
+		<!--Pushes down the footer -->
+		<div class="push">
+		</div> 
+		<div class="footer">
+			<div class="container">
+				<p><hr><a href="about.html"> FAQ </a></p>
+			</div>
+		</div>
+		
+	</body>
+</html>

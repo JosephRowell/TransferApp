@@ -10,25 +10,24 @@
 	
 }
 
-h1 {
-
-}
-.dropdown {
-	margin-left: auto;
-	margin-right: auto;
-	width: 700px;
-}
-
-.dropdown-menu {
-	height: auto;
-	max-height: 300px;
-	overflow-x: hidden;
-}
-
 .submitbutton {
 	margin-left: 60%;
 }
 
+.title {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+}
+.courses{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	height:auto;
+	max-height:420px;
+	overflow:auto;
+}
 
 .btn-primary{
 	background: #d2232a !important;

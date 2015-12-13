@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="entercourses_style.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<!-- header - navigation bar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="studentview.html">Marist Transfer App</a>
+					</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="studentview.html">Home</a></li>
+						<li><a href="viewcourses.php">View Courses</a></li>
+						<li><a href="entercourses.php">Enter Courses</a></li>
+						<li><a href="index.html">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- script for the add more button, if used -->
+		<script>
+			var i = 0;
+			var original = document.getElementById('dropdowns');
+			function duplicate() {
+				var clone = original.cloneNode(true);
+				clone.id = "dropdowns" + ++i;
+				original.parentNode.appendChild(clone);
+			}
+			$(".addmore > .btn").click(function(){
+				$('button').prop('disabled', true);
+			});
+		</script>
+		
+		<div class="img-container">
+			<img src = "longlogo.jpg" alt = "Marist Logo">
+		</div>
+
+		<h1>Enter Courses</h1>	
+	
+		<div id="dropdowns">
+			<p>
+				<select class="courses" id="course1" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>
+			</p>
+			<p>
+				<select class="courses" id="course2" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+			<p>
+				<select class="courses" id="course3" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>
+			</p>
+			<p>
+				<select class="courses" id="course4" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>
+			</p>
+			<p>
+				<select class="courses" id="course5" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+			<p>
+				<select class="courses" id="course6" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+			<p>
+				<select class="courses" id="course7" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+			<p>
+				<select class="courses" id="course8" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+			<p>
+				<select class="courses" id="course9" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+			<p>
+				<select class="courses" id="course10" name="courses[courses]">
+					<option value="" disabled selected>Choose Course</option><br>
+					<option value="">Computer Science I</option><br>
+					<option value="">Computer Science II</option><br>
+					<option value="">Computer Science Elective</option><br>
+					<option value="">Computing Study Seminar</option><br>
+					<option value="">Intro to Programming</option><br>
+					<option value="">Object Oriented Programming C++</option><br>
+					<option value="">Robotics</option><br>
+					<option value="">Software Developement I</option><br>
+					<option value="">Technology + Entrepreneurship</option><br>
+					<option value="">Technology For 21st Century</option><br>
+				</select>	
+			</p>
+		</div>
+	
+		<!--<div class="addmore"> 
+			<button type="button" class="btn" onclick="duplicate()">+ Add more courses</button>
+		</div>-->
+	
+		<div class="submitbutton">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<br>
+		<!-- footer -->
+		<!--Pushes down the footer -->
+		<div class="push">
+		</div> 
+		<div class="footer">
+			<div class="container">
+				<p><hr><a href="about.html"> FAQ </a></p>
+			</div>
+		</div>
+
+<!--<a href ng-click="showhidedetails = !showhidedetails" style="font-size:160%">filter</a>
+	<div id="showhidedetails" ng-hide="showhidedetails">
+		<div class="showcolleges"> hello</div>-->
+
+	</body>
+</html>

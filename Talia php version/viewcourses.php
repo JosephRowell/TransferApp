@@ -15,16 +15,19 @@
 				margin-bottom: 50px;
 				width: 1050px;
 			}
+			.title {
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				width: 1000px;
+			}
 			.courses {
 				margin-left: auto;
 				margin-right: auto;
-				width: 700px;
-			}
-			pre{
+				width: 1000px;
 				height:auto;
-				max-height:400px;
+				max-height:420px;
 				overflow:auto;
-				<!--background-color: #d2232a;-->
 			}
 		</style>
 		
@@ -45,65 +48,78 @@
 			</div>
 		</nav>
 		
+		<script>
+				var pg = require('pg');
+				var conString = "postgres://postgres:postgres@localhost/DB1";
+				var query = client.query('SELECT name FROM maristcourses');
+				query.on('row', function(row) {
+					console.log('user "%s" is the example', row.name);
+				});
+				//pg.connect(conString, function(err, client, done) {
+					//if(err) {
+						//return console.error('error fetching client from pool', err);
+					//}
+					//client.query('SELECT * FROM maristcourses', function(err, result) {
+						//done();
+						
+						//if(err) {
+							//return console.error('error running query', err);
+						//}
+						//console.log(result.rows[0].number);
+					//});
+				//});
+				
+			</script>
+		
 		<div class="img-container">
 			<img src = "longlogo.jpg" alt = "Marist Logo">
 		</div>
 		
-		<div class="courses">
-		<h1>Course catalog:</h1>
 		
-		<script>
-			var pg = require('pg');
-			var conString = "postgres://postgres:postgres@localhost/DB1";
-			var query = client.query('SELECT name FROM maristcourses');
-			query.on('row', function(row) {
-				console.log('user "%s" is the example', row.name);
-			});
-			//pg.connect(conString, function(err, client, done) {
-				//if(err) {
-					//return console.error('error fetching client from pool', err);
-				//}
-				//client.query('SELECT * FROM maristcourses', function(err, result) {
-					//done();
-					
-					//if(err) {
-						//return console.error('error running query', err);
-					//}
-					//console.log(result.rows[0].number);
-				//});
-			//});
-			
-		</script>
-		
-			<pre>
-			<?php
-				//attempt a connection
-				$dbh = pg_connect("host=localhost dbname=capping user=postgres password=password")
-				or die("Can't connect to database".pg_last_error());
-				//query
-				$sql = "SELECT distinct c.crsid, c.name,  m.marid, m.name
-						FROM DCC_Courses c, MaristCourses m, Transferable t
-						WHERE c.crsid = t.crsid AND c.ccid = t.ccid 
-						AND m.marid = t.marid AND m.mcid = t.mcid
-						ORDER BY c.crsid, m.name";
-				$result = pg_query($dbh, $sql);
-					if(!$result){
-						die("Error in SQL query: " . pg_last_error());
-					}
-				//iterate over result set & print each row
-				while ($row = pg_fetch_array($result)) {
-					//echo $row[0] . "";
-					echo "<br/>DCC Course: ". $row[0]. " - " . $row[1] . "       Marist Course: ". $row[2]. " - " . $row[3] . "<br />";
-					//echo "<br />Marist Courses: " . $row[2] . "  " . row[3] .  "<br />";
-					//echo "Marist name: " . $row[3] . "<br />";
-					//echo "subject: " . $row[4] . "<p />";
-				}
-				//free memory
-				pg_free_result($result);
-				//close connection
-				pg_close($dbh);
-			?>
-			<pre>
+		<div class="title">
+			<h1>Course Transfer Catalog:</h1>
+			<div class="courses">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>DCC Course Number</th>
+							<th>DCC Course</th>
+							<th>Marist Course Number</th>
+							<th>Marist Course</th>
+						<tr>
+					</thead>
+					<tbody>
+						<?php
+							//attempt a connection
+							$dbh = pg_connect("host=localhost dbname=capping user=postgres password=password")
+							or die("Can't connect to database".pg_last_error());
+							//query
+							$sql = "SELECT distinct c.crsid, c.name,  m.marid, m.name
+									FROM DCC_Courses c, MaristCourses m, Transferable t
+									WHERE c.crsid = t.crsid AND c.ccid = t.ccid 
+									AND m.marid = t.marid AND m.mcid = t.mcid
+									ORDER BY c.crsid, m.name";
+							$result = pg_query($dbh, $sql);
+								if(!$result){
+									die("Error in SQL query: " . pg_last_error());
+								}
+							//iterate over result set & print each row
+							while ($row = pg_fetch_array($result)) {
+								//echo $row[0] . "";
+								echo "<tr><td>". nl2br(stripslashes($row[0])) . "</td><td>" . nl2br(stripslashes($row[1])) . "</td><td>" . nl2br(stripslashes($row[2])) . " </td><td> " . nl2br(stripslashes($row[3])) . "</td></tr>";
+								//echo "<br/>DCC Course: ". $row[0]. " - " . $row[1] . "         Marist Course: ". $row[2]. " - " . $row[3] . "<br />";
+								//echo "<br />Marist Courses: " . $row[2] . "  " . row[3] .  "<br />";
+								//echo "Marist name: " . $row[3] . "<br />";
+								//echo "subject: " . $row[4] . "<p />";
+							}
+							//free memory
+							pg_free_result($result);
+							//close connection
+							pg_close($dbh);
+						?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		
 		<!-- footer -->
