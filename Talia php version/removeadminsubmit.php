@@ -16,10 +16,10 @@
 					</div>
 				<div>
 					<ul class="nav navbar-nav">
-						<li><a href="studentview.html">Home</a></li>
-						<li><a href="viewcourses.php">View Courses</a></li>
-						<li><a href="entercourses.php">Enter Courses</a></li>
-						<li><a href="index.html">Login</a></li>
+						<li><a href="adminview.html">Home</a></li>
+						<li><a href="viewcoursesadmin.php">View Courses</a></li>
+						<!--<li><a href="entercourses.php">Enter Courses</a></li>-->
+						<li><a href="index.html">Log Out</a></li>
 					</ul>
 				</div>
 			</div>
@@ -30,21 +30,18 @@
 			<img src = "longlogo.jpg" alt = "Marist Logo">
 		</div>
 		<div class="title">
-			<h1> The following courses transfer:</h1><br>
+			<h1> The following admins have been removed:</h1><br>
 			<div class="courses">
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>DCC Course Number</th>
-							<th>DCC Course</th>
-							<th>Marist Course Number</th>
-							<th>Marist Course</th>
-							<th>Credits</th>
+							<th>First Name</th>
+							<th>Last Name</th>
 						<tr>
 					</thead>
 					<tbody>
 						<?php
-							global $var;
+							/*global $var;
 							$var = "AND (";
 							global $i;
 							$i = 0;
@@ -93,20 +90,11 @@
 									. $var 
 							ORDER BY c.crsid*/
 							
-							//echo "<h6> Your total credits transfered is : " . $totalCredits . " </h6>";
+							//echo "<h6> Your total credits transfered is : " . $totalCredits . " </h6>";*/
 						?>
 					</tbody>
 				</table>
 			</div>
-			
-			
-			
-			<?php 
-			
-			echo "<h6> Your total credits transfered is : " . $totalCredits . " </h6>";
-			
-			?>
-			<p><h6>* If a course is not listed it does not transfer. You can refer to the course transfer catalog <a href="viewcourses.php">here</a>.</h6></p>
 		</div>
 		
 		<!-- footer -->

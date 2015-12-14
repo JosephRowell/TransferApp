@@ -31,19 +31,19 @@
 		<h1 align="center">Registration</h1>
 		
 		<div class="register-container">
-			<form>
-				<input type="text" name="" placeholder="First Name" required>
-				<input type="text" name="" placeholder="Last Name" required>
-				<input type="text" name="user" placeholder="Email" required>
-				<input type="password" name="pass" placeholder="Password" required>
-				<select class="colleges" required>
+			<form action="addadmin.php" method="post">
+				<input type="text" name="fname" id="fname" placeholder="First Name" required>
+				<input type="text" name="lname" id="lname" placeholder="Last Name" required>
+				<input type="text" name="email" id="email" placeholder="Email" required>
+				<input type="password" name="password" id="password" placeholder="Password" required>
+				<!--<select class="colleges" required>
 					<option value="" disabled selected>
 						Choose Current College
 					</option>
 					<option value="DCC">
 						Marist College
 					</option>
-				</select>
+				</select>-->
 				<input type="submit" name="login" class="login register-submit" value="Register">
 			</form>
 		</div>
